@@ -38,6 +38,7 @@ The Polkadot ecosystem is a natural fit for W3b Stitch due to its focus on inter
 Team Interest
 
 Our team is deeply motivated to solve the growing challenge of digital misinformation and unverifiable credentials. We believe that trust is a missing layer in Web3, and Polkadot’s architecture uniquely supports our vision of decentralized, interoperable, and scalable verification. By building W3b Stitch within this ecosystem, we can contribute to the broader mission of creating a trustworthy, open, and user-centric internet.
+
 ### Project Details
 
 We expect the teams to already have a solid idea about your project's expected final state. Therefore, we ask the teams to submit (where relevant):
@@ -154,6 +155,7 @@ Until recently, Web3 infrastructure was focused primarily on DeFi and token econ
 Are there any projects similar to yours in related ecosystems?
 
 No direct equivalents exist. While certain ecosystems (e.g., Ethereum, Solana) have experiments in identity or credentialing, none provide the modular, multi-domain trust architecture proposed by W3b Stitch. This novelty, combined with Polkadot’s interoperability and governance model, makes the project uniquely positioned to succeed here.
+
 ## Team :busts_in_silhouette:
 
 > [!IMPORTANT]
@@ -162,7 +164,7 @@ No direct equivalents exist. While certain ecosystems (e.g., Ethereum, Solana) h
 ### Team members
 
 - Name of team leader: Jayden C. Saliby
-- Names of team members: 
+- Names of team members: potential dev companies are on stand-by awaiting funding. These include Cowchain, Node Central, etc. I also have independent contractors higly interested such as workflow automation experts.
 
 ### Contact
 
@@ -198,17 +200,17 @@ This is our first submission to the Web3 Foundation. No prior grants have been a
 ### Team Code Repos
 
 -(https://github.com/rocketjays-cmyk/w3b-stitch)
-- https://github.com/{your_organisation}/{project_2}
+
 
 Please also provide the GitHub accounts of all team members. If they contain no activity, references to projects hosted elsewhere or live are also fine.
 
 - https://github.com/rocketjays-cmyk
-- https://github.com/{team_member_2}
+
 
 ### Team LinkedIn Profiles (if available)
 
 - www.linkedin.com/in/w3bstitch
-- https://www.linkedin.com/{person_2}
+
 
 
 ## Development Status :open_book:
@@ -236,7 +238,7 @@ Below we provide an **example roadmap**. In the descriptions, it should be clear
 - **Total Estimated Duration:** 2-3 months
 - **Full-Time Equivalent (FTE):** 1.5 FTE
 - **Total Costs:** 25000-30000
-- **DOT %:** Percentage of Total Costs to be paid in (vested) DOT (≥ 50%) 
+- **DOT %:** 50% DOT / 50% USDC 
 
 ### Milestone 1 Example — Basic functionality
 
@@ -255,20 +257,21 @@ Documentation of core architecture and integration points
 
 | Number | Deliverable | Specification |
 | -----: | ----------- | ------------- |
-| **0a.** | License | Apache 2.0 / GPLv3 / MIT / Unlicense. See the [delivery guidelines](https://grants.web3.foundation/docs/Support%20Docs/milestone-deliverables-guidelines#license) for details. |
-| **0b.** | Documentation | We will provide both **inline documentation** of the code and a basic **tutorial** that explains how a user can (for example) spin up one of our Substrate nodes and send test transactions, which will show how the new functionality works. See the [delivery guidelines](https://grants.web3.foundation/docs/Support%20Docs/milestone-deliverables-guidelines#documentation) for details. |
-| **0c.** | Testing and Testing Guide | Core functions will be fully covered by comprehensive unit tests to ensure functionality and robustness. In the guide, we will describe how to run these tests. See the [delivery guidelines](https://grants.web3.foundation/docs/Support%20Docs/milestone-deliverables-guidelines#testing-guide) for details. |
-| **0d.** | Docker | We will provide a Dockerfile(s) that can be used to test all the functionality delivered with this milestone. |
-| 0e. | Article | We will publish an **article**/workshop that explains [...] (what was done/achieved as part of the grant). (Content, language, and medium should reflect your target audience described above.) |
-| 1. | Substrate module: X | We will create a Substrate module that will... (Please list the functionality that will be implemented for the first milestone. You can refer to details provided in previous sections.) |
-| 2. | Substrate module: Y | The Y Substrate module will... |
-| 3. | Substrate module: Z | The Z Substrate module will... |
-| 4. | Substrate chain | Modules X, Y & Z of our custom chain will interact in such a way... (Please describe the deliverable here as detailed as possible) |
-| 5. | Library: ABC | We will deliver a JS library that will implement the functionality described under "ABC Library" |
-| 6. | Smart contracts: ... | We will deliver a set of ink! smart contracts that will...
+| **0a.** | License | Apache 2.0. |
+| **0b.** | Documentation | We will provide both **inline documentation** of the code and a basic **tutorial** that explains how to spin up a Substrate node, deploy the included pallets, and send test transactions, which will demonstrate the new functionality. |
+| **0c.** | Testing and Testing Guide | Core functions will be fully covered by comprehensive unit tests (>80% coverage) to ensure functionality and robustness. In the guide, we will describe how to run these tests and interpret results. |
+| **0d.** | Docker | We will provide Dockerfile(s) that can be used to spin up a local chain with the new pallets included, enabling reproducible testing of all milestone functionality. |
+| **0e.** | Article | We will publish a **technical article/workshop** that explains the purpose of W3b Stitch, the implementation of the delivered pallets (anchoring, credential provenance, reputation), and how developers and partners (media verification platforms, credential issuers) can integrate with it. This will be published on Medium and the Web3 Foundation forum to reach both the developer community and ecosystem stakeholders. |
+| # | Deliverable | Specification |
+|---|-------------|---------------|
+| 1. | Substrate module: **pallet_tdr_anchor** (Trust Delta Anchoring) | We will implement a pallet that anchors content/credential hashes and Verifiable State Bundle (VSB) commitments. **Functionality:** (a) extrinsics: `anchor_hash(origin, hash, cid, tags)`, `anchor_vsb(origin, merkle_root, bundle_size)`, `link_derivation(origin, parent_anchor_id, child_anchor_id)`, `verify_membership(origin, merkle_root, leaf, proof)`; (b) storage for Anchors, VSBs, and Parent↔Child links; (c) events for every anchor/verification; (d) on-chain verification of Merkle proofs; (e) weights/benchmarks and >80% unit/integration test coverage; (f) README + rustdocs + example usage in a node-template runtime. |
+| 2. | Substrate module: **pallet_capm_credentials** (Credential Authentication & Provenance) | We will implement a pallet to manage issuers, schemas, and credential provenance. **Functionality:** (a) issuer registry (DID → keys/permissions); (b) schema registry (schema hash/CID); (c) credential anchoring with optional revocation via Merkle accumulator; (d) extrinsics: `register_issuer`, `register_schema`, `anchor_credential(origin, cred_hash, issuer, schema_ref)`, `revoke_credential(origin, cred_id)`, `verify_credential(origin, cred_hash, proof?)`; (e) events + queries; (f) weights/benchmarks, >80% test coverage, README/rustdocs. |
+| 3. | Substrate module: **pallet_dirm_reputation** (Decentralized Identity & Reputation / Trust Deltas) | We will implement a pallet to record **Trust Delta Records (TDRs)** and compute deterministic reputation scores. **Functionality:** (a) storage for TDRs keyed by subject DID/resource ID; (b) signal types: `endorse`, `dispute`, `challenge`, `resolve` with configurable weights; (c) extrinsics: `submit_signal(origin, subject, signal_type, ref_anchor)`, `set_weights(origin, weights)` (governed), `recompute_score(origin, subject)`; (d) on_initialize hook for scheduled recomputations; (e) events + query APIs; (f) weights/benchmarks, >80% tests, README/rustdocs. *(Note: offchain worker hooks for IPFS/Filecoin proof lookups will be stubbed in M1 and fully wired in a later milestone.)* |
+| 4. | Substrate chain | We will deliver a **custom Substrate chain runtime** that integrates the three pallets (`pallet_tdr_anchor`, `pallet_capm_credentials`, and `pallet_dirm_reputation`). **Functionality:** (a) modules interact so that credential anchors (CAPM) and content anchors (TDR) feed into reputation scoring (DIRM); (b) runtime configuration to link pallets via events/hooks; (c) chain spec + genesis configuration; (d) end-to-end demo scenario (anchor → credential → trust delta → reputation recompute) using test accounts; (e) >80% integration test coverage and benchmarks. |
+| 5. | Library: w3bstitch-js | We will deliver a **JavaScript/TypeScript library** (`w3bstitch-js`) that wraps RPC calls to our Substrate node and exposes high-level developer functions. **Functionality:** (a) connect to chain endpoint via Polkadot.js API; (b) functions like `anchorHash()`, `verifyAnchor()`, `registerIssuer()`, `anchorCredential()`, `submitSignal()`, `getReputationScore()`; (c) examples + inline docs; (d) published as an NPM package; (e) developer guide showing usage in dApps and credential issuers’ systems. |
+| 6. | Smart contracts: ink! trust adapters | We will deliver a set of **ink! smart contracts** that provide lightweight anchoring and verification adapters for environments where full Substrate pallets are not deployed. **Functionality:** (a) contract for anchoring/verifying hashes on-chain (bridging to pallet_tdr_anchor where available); (b) contract for credential revocation/verification; (c) contract for emitting trust delta events usable by off-chain indexers; (d) full unit tests in ink!; (e) deployment + integration guide. |
 
-
-### Milestone 2 Example — Additional features
+### Milestone 2 — 
 
 - **Estimated Duration:** 1 month
 - **FTE:**  1,5
@@ -309,12 +312,13 @@ You can find more information about the program [here](https://grants.web3.found
 - **Referrer:** Name of the Polkadot Ambassador or GitHub account of the Web3 Foundation grantee
 - **Payment Address:**
 
-## Additional Information :heavy_plus_sign: The white paper is also available on www.w3bstitch.com
+## Additional Information :heavy_plus_sign: The white paper is  available on www.w3bstitch.com
 
 **How did you hear about the Grants Program?**  Was actively seeking connection for the w3b-stitch project on github. 
 
 Here you can also add any additional information that you think is relevant to this application but isn't part of it already, such as:
 
-- Work you have already done.
-- If there are any other teams who have already contributed (financially) to the project.
-- Previous grants you may have applied for.
+- Work you have already done: Repo for w3bstitch is open and will be  updated soon.
+- If there are any other teams who have already contributed (financially) to the project: N/A
+- Previous grants you may have applied for: Currently pursuing multitude of various grants, and partnerships though unrelated.
+
