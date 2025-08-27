@@ -1,9 +1,5 @@
 # W3b-Stitch
 
-
->
-> See the [Grants Program Process](https://grants.web3.foundation/docs/process) on how to submit a proposal.
-
 - **Team Name:** W3b Stitch Technologies L.L.C
 - **Payment Details:**
   - **DOT**: 15mNcGQnJVKv9PXLhWEQWcz4VeBJESLDrgvsU7FN9bw1XAmB
