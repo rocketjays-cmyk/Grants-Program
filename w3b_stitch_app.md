@@ -137,8 +137,6 @@ No direct equivalents exist. While certain ecosystems (e.g., Ethereum, Solana) h
 
 ## Team :busts_in_silhouette:
 
-> [!IMPORTANT]
-> Please note that the data provided in this section is for administrative and informational purposes only. All beneficiaries of a grant must also be listed in the KYC/KYB process during the application phase. See our [FAQ](https://grants.web3.foundation/docs/faq#what-is-kyckyb-and-why-do-i-have-to-provide-this-data) for more info.
 
 ### Team members
 
@@ -209,9 +207,6 @@ This section should break the development roadmap down into milestones and deliv
 
 Below we provide an **example roadmap**. In the descriptions, it should be clear how your project is related to Substrate, Kusama or Polkadot. We *recommend* that teams structure their roadmap as 1 milestone ≈ 1 month.
 
-> [!CAUTION]
-> If any of your deliverables are based on somebody else's work, make sure you work and publish *under the terms of the license* of the respective project and that you **highlight this fact in your milestone documentation** and in the source code if applicable! **Projects that submit other people's work without proper attribution will be immediately terminated.**
-
 ## Overview
 - **Total Estimated Duration:** 3 months  
 - **Full-Time Equivalent (FTE):** 2  
@@ -268,8 +263,6 @@ Long-Term Team Plans and Intentions
 Our long-term plan is to establish W3b Stitch Technologies LLC as the steward of the project, maintaining core development while fostering an open ecosystem of contributors. We intend to evolve W3b Stitch into a cross-industry trust layer for verifiable credentials and digital interactions. Over time, we plan to decentralize governance and invite community participation in shaping roadmap priorities, while ensuring professional maintenance, security audits, and integration support remain ongoing.
 
 ## Referral Program (optional) :moneybag:
-
-You can find more information about the program [here](https://grants.web3.foundation/docs/referral-program).
 
 - **Referrer:** none
 - **Payment Address:** N/A
