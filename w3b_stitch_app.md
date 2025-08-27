@@ -6,17 +6,11 @@
   - **Payment**:(USDC) 15mNcGQnJVKv9PXLhWEQWcz4VeBJESLDrgvsU7FN9bw1XAmB
 - **[Level](https://grants.web3.foundation/docs/Introduction/levels):** Level 2
 
-## Project Overview :page_facing_up:W3b Stitch is a decentralized trust engine designed to make digital interactions verifiable, transparent, and secure. The application provides an MVP credential and media verification service, enabling users and organizations to anchor proofs of authenticity on-chain and verify them seamlessly through a simple web interface. By combining decentralized identifiers (DIDs), verifiable credentials, and blockchain anchoring, W3b Stitch empowers individuals, enterprises, and communities to validate the integrity of content, credentials, and identities without relying on centralized intermediaries.
-
-The short-term focus of the app is to demonstrate a working prototype that allows users to upload digital content or credentials, generate a verifiable proof, and confirm authenticity against an immutable ledger. In the long term, W3b Stitch aims to evolve into a scalable trust layer supporting cross-industry use cases—from media verification and academic credentialing to supply chain integrity and decentralized reputation systems.
-If this application is in response to an RFP, please indicate this on the first line of this section.
-
-If this is an application for a follow-up grant (the continuation of an earlier, successful W3F grant), please provide the name and/or pull request of said grant on the first line of this section.
+## Project Overview :page_facing_up:
 
 ### Overview
 
-Tagline
-
+Tagline:
 W3b Stitch — a decentralized trust engine for verifying media, credentials, and identities across blockchains.
 
 Brief Description
@@ -32,9 +26,6 @@ Team Interest
 Our team is deeply motivated to solve the growing challenge of digital misinformation and unverifiable credentials. We believe that trust is a missing layer in Web3, and Polkadot’s architecture uniquely supports our vision of decentralized, interoperable, and scalable verification. By building W3b Stitch within this ecosystem, we can contribute to the broader mission of creating a trustworthy, open, and user-centric internet.
 
 ### Project Details
-
-We expect the teams to already have a solid idea about your project's expected final state. Therefore, we ask the teams to submit (where relevant):
-ockups / Designs of UI Components
 
 The initial MVP will feature a web-based dashboard with the following core components:
 
