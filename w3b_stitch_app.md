@@ -309,8 +309,8 @@ Our long-term plan is to establish W3b Stitch Technologies LLC as the steward of
 
 You can find more information about the program [here](https://grants.web3.foundation/docs/referral-program).
 
-- **Referrer:** Name of the Polkadot Ambassador or GitHub account of the Web3 Foundation grantee
-- **Payment Address:**
+- **Referrer:** N/A
+- **Payment Address:** N/A
 
 ## Additional Information :heavy_plus_sign: The white paper is  available on www.w3bstitch.com
 
