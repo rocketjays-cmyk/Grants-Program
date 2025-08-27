@@ -260,11 +260,8 @@ Our long-term plan is to establish W3b Stitch Technologies LLC as the steward of
 
 ## Additional Information :heavy_plus_sign: The white paper is  available on www.w3bstitch.com
 
-**How did you hear about the Grants Program?**  Was actively seeking connection for the w3b-stitch project on github. 
+**How did you hear about the Grants Program?**  
+Research on Github.
 
-Here you can also add any additional information that you think is relevant to this application but isn't part of it already, such as:
 
-- Work you have already done: Repo for w3bstitch is open and will be  updated soon.
-- If there are any other teams who have already contributed (financially) to the project: N/A
-- Previous grants you may have applied for: Currently pursuing multitude of various grants, and partnerships though unrelated.
 
