@@ -8,7 +8,7 @@
 - **Team Name:** W3b Stitch Technologies L.L.C
 - **Payment Details:**
   - **DOT**: 15mNcGQnJVKv9PXLhWEQWcz4VeBJESLDrgvsU7FN9bw1XAmB
-  - **Payment**:(USDC) 15mNcGQnJVKv9PXLhWEQWcz4VeBJESLDrgvsU7FN9bw1XAmB(USDC)
+  - **Payment**:(USDC) 15mNcGQnJVKv9PXLhWEQWcz4VeBJESLDrgvsU7FN9bw1XAmB
 - **[Level](https://grants.web3.foundation/docs/Introduction/levels):** 2
 
 > [!IMPORTANT]
