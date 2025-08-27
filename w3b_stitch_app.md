@@ -104,11 +104,6 @@ It will not replace existing identity providers; rather, it complements them via
 It will not deliver a public blockchain from scratch; instead, it leverages Substrate and Polkadot’s ecosystem.
 
 It is not intended as a moderation tool for social platforms but as a verification layer they can integrate.
-Things that shouldn’t be part of the application (see also our [FAQ](../docs/faq.md)):
-
-- The (future) tokenomics of your project
-- For non-infrastructure projects—deployment and hosting costs, maintenance or audits
-- Business-oriented activities (marketing, business planning), events or outreach
 
 ### Ecosystem Fit
 
