@@ -8,8 +8,8 @@
 - **Team Name:** W3b Stitch Technologies L.L.C
 - **Payment Details:**
   - **DOT**: 15mNcGQnJVKv9PXLhWEQWcz4VeBJESLDrgvsU7FN9bw1XAmB
-  - **Payment**:(USDC) 15mNcGQnJVKv9PXLhWEQWcz4VeBJESLDrgvsU7FN9bw1XAmB
-- **[Level](https://grants.web3.foundation/docs/Introduction/levels):** 1, 2 or 3
+  - **Payment**:(USDC) 15mNcGQnJVKv9PXLhWEQWcz4VeBJESLDrgvsU7FN9bw1XAmB(USDC)
+- **[Level](https://grants.web3.foundation/docs/Introduction/levels):** 2
 
 > [!IMPORTANT]
 > *The combination of your GitHub account submitting the application and the payment address above will be your unique identifier during the program. Please keep them safe.*
@@ -70,30 +70,22 @@ GET /verify/{hash} → confirm existence and validity on-chain.
 GET /credential/{id} → retrieve credential metadata and verification record.
 
 Technology Stack Overview
+## Tech Stack Overview
 
-Frontend: Next.js (React) with Tailwind for styling.
+| Layer            | Technology / Standard                                  | Purpose & Role                                                                 |
+|------------------|--------------------------------------------------------|--------------------------------------------------------------------------------|
+| **Frontend**     | Next.js (React 18), Tailwind CSS                       | User-facing dashboard for credential/media verification; responsive and modern UI |
+| **Backend**      | NestJS (TypeScript) REST API                           | Verification pipeline orchestration, hashing, event-driven trust logic           |
+| **Blockchain**   | Substrate-based parachain (Westend/Kusama testnets)    | On-chain anchoring of Trust Delta Records (TDRs) and Verifiable State Bundles (VSBs) via custom pallet |
+| **Storage**      | IPFS / Filecoin                                        | Decentralized storage of optional proofs and metadata, ensuring permanence & resilience |
+| **Identity**     | W3C DIDs & Verifiable Credentials (VCs)                | Credential modeling, selective disclosure, and interoperability across systems   |
+| **Protocols**    | W3C VC / DID Standards, Polkadot XCM                   | Standards compliance and cross-parachain interoperability                      |
+| **DevOps**       | Docker, GitHub Actions                                 | Containerization and CI/CD pipelines for reliable deployments                   |
+| **Database**     | PostgreSQL                                             | Off-chain persistence of events, user state, and verification logs              |
 
-Backend: NestJS (TypeScript) REST API.
+---
 
-Blockchain Layer: Substrate-based parachain integration for on-chain anchoring, starting with test deployments (Kusama/Westend).
 
-Storage: IPFS for decentralized storage of optional proofs.
-
-Identity: W3C DIDs & VCs for credential modeling.
-
-Documentation of Core Components / Architecture
-
-Core Components:
-
-Credential Authentication & Provenance Module (CAPM).
-
-Media Verification & Curation Module (MVCM).
-
-Decentralized Identity & Reputation Module (DIRM).
-
-Protocols: W3C Verifiable Credentials, Decentralized Identifiers, and Polkadot’s XCM for cross-parachain interoperability.
-
-Architecture: Modular services built around a verification pipeline → input (media/credential) → hashing → on-chain anchoring (Substrate pallet) → verification response.
 
 PoC / MVP or Prior Work
 
@@ -233,62 +225,45 @@ Below we provide an **example roadmap**. In the descriptions, it should be clear
 > [!CAUTION]
 > If any of your deliverables are based on somebody else's work, make sure you work and publish *under the terms of the license* of the respective project and that you **highlight this fact in your milestone documentation** and in the source code if applicable! **Projects that submit other people's work without proper attribution will be immediately terminated.**
 
-### Overview
+## Overview
+- **Total Estimated Duration:** 3 months  
+- **Full-Time Equivalent (FTE):** 2  
+- **Total Costs:** 30,000 USD  
+- **DOT %:** 50%  
 
-- **Total Estimated Duration:** 2-3 months
-- **Full-Time Equivalent (FTE):** 1.5 FTE
-- **Total Costs:** 25000-30000
-- **DOT %:** 50% DOT / 50% USDC 
+---
 
-### Milestone 1 Example — Basic functionality
+## Milestone 1 — Trust Delta Anchoring Pallet
 
-- **Estimated duration:** 1 month
-- **FTE:**  1,5
-- **Costs:** 10,000 USD
-Functional MVP with credential anchoring and verification flow
+- **Estimated Duration:** 1.5 months  
+- **FTE:** 2  
+- **Costs:** 15,000 USD  
 
-Basic web dashboard (upload, verify, proof history)
+| No. | Deliverable | Specification |
+|-----|-------------|---------------|
+| 0a. | License | Apache 2.0 |
+| 0b. | Documentation | Provide inline rustdocs + full developer guide describing pallet usage, setup instructions, and integration into a Substrate node. |
+| 0c. | Tests & Test Guide | >80% unit and integration test coverage; test guide includes instructions on running cargo tests, interpreting results, and benchmarking. |
+| 0d. | Docker | Dockerfile to spin up a local Substrate node with `pallet_tdr_anchor` included. |
+| 0e. | Article | Publish technical article explaining Trust Delta Records (TDRs), the anchoring process, and developer integration points. |
+| 1. | Substrate module: `pallet_tdr_anchor` | Anchors content/credential hashes and Verifiable State Bundle (VSB) commitments. Includes extrinsics (`anchor_hash`, `anchor_vsb`, `verify_membership`), storage for anchors, events, Merkle proof verification, weights/benchmarks, rustdocs, and example runtime integration. |
 
-API endpoints for anchor and verify
+---
 
-Documentation of core architecture and integration points
-> [!NOTE]
-> **The default deliverables 0a-0d below are mandatory for all milestones**, and deliverable 0e at least for the last one.
+## Milestone 2 — Credential Authentication & Provenance Pallet
 
-| Number | Deliverable | Specification |
-| -----: | ----------- | ------------- |
-| **0a.** | License | Apache 2.0. |
-| **0b.** | Documentation | We will provide both **inline documentation** of the code and a basic **tutorial** that explains how to spin up a Substrate node, deploy the included pallets, and send test transactions, which will demonstrate the new functionality. |
-| **0c.** | Testing and Testing Guide | Core functions will be fully covered by comprehensive unit tests (>80% coverage) to ensure functionality and robustness. In the guide, we will describe how to run these tests and interpret results. |
-| **0d.** | Docker | We will provide Dockerfile(s) that can be used to spin up a local chain with the new pallets included, enabling reproducible testing of all milestone functionality. |
-| **0e.** | Article | We will publish a **technical article/workshop** that explains the purpose of W3b Stitch, the implementation of the delivered pallets (anchoring, credential provenance, reputation), and how developers and partners (media verification platforms, credential issuers) can integrate with it. This will be published on Medium and the Web3 Foundation forum to reach both the developer community and ecosystem stakeholders. |
-| # | Deliverable | Specification |
-|---|-------------|---------------|
-| 1. | Substrate module: **pallet_tdr_anchor** (Trust Delta Anchoring) | We will implement a pallet that anchors content/credential hashes and Verifiable State Bundle (VSB) commitments. **Functionality:** (a) extrinsics: `anchor_hash(origin, hash, cid, tags)`, `anchor_vsb(origin, merkle_root, bundle_size)`, `link_derivation(origin, parent_anchor_id, child_anchor_id)`, `verify_membership(origin, merkle_root, leaf, proof)`; (b) storage for Anchors, VSBs, and Parent↔Child links; (c) events for every anchor/verification; (d) on-chain verification of Merkle proofs; (e) weights/benchmarks and >80% unit/integration test coverage; (f) README + rustdocs + example usage in a node-template runtime. |
-| 2. | Substrate module: **pallet_capm_credentials** (Credential Authentication & Provenance) | We will implement a pallet to manage issuers, schemas, and credential provenance. **Functionality:** (a) issuer registry (DID → keys/permissions); (b) schema registry (schema hash/CID); (c) credential anchoring with optional revocation via Merkle accumulator; (d) extrinsics: `register_issuer`, `register_schema`, `anchor_credential(origin, cred_hash, issuer, schema_ref)`, `revoke_credential(origin, cred_id)`, `verify_credential(origin, cred_hash, proof?)`; (e) events + queries; (f) weights/benchmarks, >80% test coverage, README/rustdocs. |
-| 3. | Substrate module: **pallet_dirm_reputation** (Decentralized Identity & Reputation / Trust Deltas) | We will implement a pallet to record **Trust Delta Records (TDRs)** and compute deterministic reputation scores. **Functionality:** (a) storage for TDRs keyed by subject DID/resource ID; (b) signal types: `endorse`, `dispute`, `challenge`, `resolve` with configurable weights; (c) extrinsics: `submit_signal(origin, subject, signal_type, ref_anchor)`, `set_weights(origin, weights)` (governed), `recompute_score(origin, subject)`; (d) on_initialize hook for scheduled recomputations; (e) events + query APIs; (f) weights/benchmarks, >80% tests, README/rustdocs. *(Note: offchain worker hooks for IPFS/Filecoin proof lookups will be stubbed in M1 and fully wired in a later milestone.)* |
-| 4. | Substrate chain | We will deliver a **custom Substrate chain runtime** that integrates the three pallets (`pallet_tdr_anchor`, `pallet_capm_credentials`, and `pallet_dirm_reputation`). **Functionality:** (a) modules interact so that credential anchors (CAPM) and content anchors (TDR) feed into reputation scoring (DIRM); (b) runtime configuration to link pallets via events/hooks; (c) chain spec + genesis configuration; (d) end-to-end demo scenario (anchor → credential → trust delta → reputation recompute) using test accounts; (e) >80% integration test coverage and benchmarks. |
-| 5. | Library: w3bstitch-js | We will deliver a **JavaScript/TypeScript library** (`w3bstitch-js`) that wraps RPC calls to our Substrate node and exposes high-level developer functions. **Functionality:** (a) connect to chain endpoint via Polkadot.js API; (b) functions like `anchorHash()`, `verifyAnchor()`, `registerIssuer()`, `anchorCredential()`, `submitSignal()`, `getReputationScore()`; (c) examples + inline docs; (d) published as an NPM package; (e) developer guide showing usage in dApps and credential issuers’ systems. |
-| 6. | Smart contracts: ink! trust adapters | We will deliver a set of **ink! smart contracts** that provide lightweight anchoring and verification adapters for environments where full Substrate pallets are not deployed. **Functionality:** (a) contract for anchoring/verifying hashes on-chain (bridging to pallet_tdr_anchor where available); (b) contract for credential revocation/verification; (c) contract for emitting trust delta events usable by off-chain indexers; (d) full unit tests in ink!; (e) deployment + integration guide. |
+- **Estimated Duration:** 1.5 months  
+- **FTE:** 2  
+- **Costs:** 15,000 USD  
 
-### Milestone 2 — 
-
-- **Estimated Duration:** 1 month
-- **FTE:**  1,5
-- **Costs:** 10,000 USD
-Extended dashboard functionality (credential viewer, proof history with filtering).
-
-Implementation of decentralized storage integration (e.g., IPFS) for optional off-chain proof metadata.
-
-Expanded API endpoints:
-
-GET /credential/{id} to retrieve credential metadata.
-
-Enhanced verification responses with more detailed status.
-
-Draft Substrate pallet prototype for proof anchoring to demonstrate Polkadot ecosystem integration.
-
-Updated documentation and user guide.
+| No. | Deliverable | Specification |
+|-----|-------------|---------------|
+| 0a. | License | Apache 2.0 |
+| 0b. | Documentation | Expand documentation with tutorials for credential issuance, verification, and revocation flows. |
+| 0c. | Tests & Test Guide | >80% unit/integration test coverage for credential registration and verification; guide to running and validating results. |
+| 0d. | Docker | Dockerfile including both `pallet_tdr_anchor` + `pallet_capm_credentials`, enabling reproducible local test environments. |
+| 0e. | Article | Publish deep-dive article on credential provenance, schema registry design, and revocation mechanisms. |
+| 2. | Substrate module: `pallet_capm_credentials` | Implements issuer registry, schema registry, credential anchoring, and revocation. Extrinsics: `register_issuer`, `register_schema`, `anchor_credential`, `revoke_credential`, `verify_credential`. Includes events, queries, weights/benchmarks, >80% test coverage, rustdocs, and runtime example. |
 
 
 ## Future Plans
@@ -309,7 +284,7 @@ Our long-term plan is to establish W3b Stitch Technologies LLC as the steward of
 
 You can find more information about the program [here](https://grants.web3.foundation/docs/referral-program).
 
-- **Referrer:** N/A
+- **Referrer:** none
 - **Payment Address:** N/A
 
 ## Additional Information :heavy_plus_sign: The white paper is  available on www.w3bstitch.com
