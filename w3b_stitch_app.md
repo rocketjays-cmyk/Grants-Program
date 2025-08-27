@@ -1,7 +1,6 @@
 # W3b-Stitch
 
-> [!NOTE]
-> This document will be part of the terms and conditions of your agreement and, therefore, needs to contain all the required information about the project. Don't remove any of the mandatory parts presented in bold letters or as headlines (except for the title)! Lines starting with a `>` (such as this one) should be removed. Please use markdown instead of HTML (e.g., `![](image.png)` instead of `<img>`).
+
 >
 > See the [Grants Program Process](https://grants.web3.foundation/docs/process) on how to submit a proposal.
 
@@ -9,10 +8,7 @@
 - **Payment Details:**
   - **DOT**: 15mNcGQnJVKv9PXLhWEQWcz4VeBJESLDrgvsU7FN9bw1XAmB
   - **Payment**:(USDC) 15mNcGQnJVKv9PXLhWEQWcz4VeBJESLDrgvsU7FN9bw1XAmB
-- **[Level](https://grants.web3.foundation/docs/Introduction/levels):** 2
-
-> [!IMPORTANT]
-> *The combination of your GitHub account submitting the application and the payment address above will be your unique identifier during the program. Please keep them safe.*
+- **[Level](https://grants.web3.foundation/docs/Introduction/levels):** Level 2
 
 ## Project Overview :page_facing_up:W3b Stitch is a decentralized trust engine designed to make digital interactions verifiable, transparent, and secure. The application provides an MVP credential and media verification service, enabling users and organizations to anchor proofs of authenticity on-chain and verify them seamlessly through a simple web interface. By combining decentralized identifiers (DIDs), verifiable credentials, and blockchain anchoring, W3b Stitch empowers individuals, enterprises, and communities to validate the integrity of content, credentials, and identities without relying on centralized intermediaries.
 
