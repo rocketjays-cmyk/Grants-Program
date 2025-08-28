@@ -131,9 +131,8 @@ No direct equivalents exist. While certain ecosystems (e.g., Ethereum, Solana) h
 
 ### Team members
 
-- Name of team leader: Jayden C. Saliby
-- Names of team members: potential dev companies are on stand-by awaiting funding. These include Cowchain, Node Central, etc. I also have independent contractors higly interested such as workflow automation experts.
-
+- Name of team leader: Jayden C. Saliby (Founder) — Inventor of W3b Stitch, author of its provisional patent design, and founder of W3b Stitch Technologies LLC. Currently advancing technical expertise through Google IT and CompTIA A+ studies while leading project architecture and development.
+- Names of team members: Oluwaseyi Oni (Contributor) — Automation workflow specialist with an MPA from Obafemi Awolowo University and an early supporter of W3b Stitch. The team is actively expanding through channels such as Colosseum, LinkedIn, and X, and has initiated discussions with potential collaborators including Cowchain.io and NodeCentral.
 ### Contact
 
 - **Contact Name:** Jayden C. Saliby
@@ -178,6 +177,7 @@ Please also provide the GitHub accounts of all team members. If they contain no 
 ### Team LinkedIn Profiles (if available)
 
 - www.linkedin.com/in/w3bstitch
+- https://www.linkedin.com/in/oluwaseyi-oni-b784a4227/
 
 
 
