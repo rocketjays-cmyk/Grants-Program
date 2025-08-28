@@ -183,14 +183,15 @@ Please also provide the GitHub accounts of all team members. If they contain no 
 
 ## Development Status :open_book:
 
-If you've already started implementing your project or it is part of a larger repository, please provide a link and www.linkedin.com/in/
+Development Status 📖
 
+- **GitHub Repository:** [https://github.com/rocketjays-cmyk/w3b-stitch](https://github.com/rocketjays-cmyk/w3b-stitch) — contains the initial MVP implementation with hash anchoring logic, FastAPI backend, and integration stubs for credential verification.  
+- **Whitepaper:** Available at [www.w3bstitch.com](http://www.w3bstitch.com) — outlines the system architecture, workflows, and long-term trust engine roadmap.  
+- **Research & Concept Validation:** Early prototype deployed as a WordPress-based news verification bot to demonstrate feasibility of on-chain proof anchoring.  
+- **Community Discussion:** Active participation on GitHub Issues and grant program forums, engaging with feedback from Web3 Foundation reviewers.  
+- **Design Iterations:** Initial UI wireframes for a credential/media verification dashboard (mockups available upon request).  
+- **Patent Filing:** Provisional patent submitted to the USPTO describing Trust Delta Records (TDRs), Verifiable State Bundles (VSBs), and multi-ledger anchoring design.  
 
-- links to improvement proposals or [RFPs](https://grants.web3.foundation/docs/rfps) (requests for proposal),
-- academic publications relevant to the problem,
-- links to your research diary, blog posts, articles, forum discussions or open GitHub issues,
-- references to conversations you might have had related to this project with anyone from the Web3 Foundation,
-- previous interface iterations, such as mock-ups and wireframes.
 
 ## Development Roadmap :nut_and_bolt:
 
@@ -284,8 +285,7 @@ Our long-term plan is to establish W3b Stitch Technologies LLC as the steward of
 - **Referrer:** none
 - **Payment Address:** N/A
 
-## Additional Information :heavy_plus_sign: The white paper is  available on www.w3bstitch.com
-
+## Additional Information :heavy_plus_sign:
 **How did you hear about the Grants Program?**  
 Research on Github.
 
