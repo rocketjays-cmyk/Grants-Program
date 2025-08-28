@@ -194,21 +194,17 @@ If you've already started implementing your project or it is part of a larger re
 
 ## Development Roadmap :nut_and_bolt:
 
-This section should break the development roadmap down into milestones and deliverables. To assist you in defining it, we have created a document with examples for some grant categories [here](../docs/Support%20Docs/grant_guidelines_per_category.md). Since these will be part of the agreement, it helps to describe *the functionality we should expect in as much detail as possible*, plus how we can verify and test that functionality. Whenever milestones are delivered, we refer to this document to ensure that everything has been delivered as expected.
-
-Below we provide an **example roadmap**. In the descriptions, it should be clear how your project is related to Substrate, Kusama or Polkadot. We *recommend* that teams structure their roadmap as 1 milestone ≈ 1 month.
-
 ## Overview
-- **Total Estimated Duration:** 3 months  
-- **Full-Time Equivalent (FTE):** 2  
+- **Total Estimated Duration:** 2 months  
+- **Full-Time Equivalent (FTE):** 2 
 - **Total Costs:** 30,000 USD  
 - **DOT %:** 50%  
 
 ---
 ### Milestone 1 — Trust Delta Anchoring Pallet & API
 
-- **Estimated Duration:** 1.5 months  
-- **FTE:** 2  
+- **Estimated Duration:** 1 months  
+- **FTE:**1 
 - **Costs:** 15,000 USD  
 
 #### Deliverables
@@ -240,8 +236,8 @@ Below we provide an **example roadmap**. In the descriptions, it should be clear
 
 ### Milestone 2 — Credential Authentication & Provenance Pallet
 
-- **Estimated Duration:** 1.5 months  
-- **FTE:** 2  
+- **Estimated Duration:** 1 months  
+- **FTE:** 1  
 - **Costs:** 15,000 USD  
 
 #### Deliverables
