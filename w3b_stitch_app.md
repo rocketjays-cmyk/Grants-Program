@@ -238,17 +238,22 @@ Development Status 📖
 
 ## Future Plans
 
-Financing Long-Term Maintenance and Development
+### Financing Long-Term Maintenance and Development
+- Subscription-based services for credential verification and media authenticity.  
+- Ecosystem grants (Web3 Foundation, Solana, Polygon) to accelerate development without loss of ownership.  
+- Enterprise integrations and SaaS subscriptions to fund ongoing maintenance and expansion.  
 
-We intend to finance long-term maintenance primarily through a combination of subscription-based services, ecosystem grants, and partnerships. Our initial focus is on building a sustainable revenue model via credential verification and media authenticity services, while strategically applying for ecosystem grants (e.g., Web3 Foundation, Solana, Polygon) to accelerate development without compromising ownership. As adoption grows, revenues from enterprise integrations and SaaS subscriptions will finance ongoing maintenance and expansion.
+### Short-Term Use, Enhancement, and Promotion
+- Prioritize MVP completion for media verification and credential authentication.  
+- Iterative protocol improvements and expansion of open-source components.  
+- Active promotion via community engagement, developer outreach, and early adopter partnerships.  
+- Showcase progress through GitHub updates, technical blogs, and social channels to build trust and attract contributors.  
 
-Short-Term Use, Enhancement, and Promotion
-
-In the short term, we will prioritize completing the MVP and demonstrating clear utility for media verification and credential authentication. This includes iterative improvements to the protocol, expanding open-source components, and actively promoting the project through community engagement, developer outreach, and partnerships with early adopters. We will also showcase progress via GitHub updates, technical blogs, and social channels to build early trust and attract contributors.
-
-Long-Term Team Plans and Intentions
-
-Our long-term plan is to establish W3b Stitch Technologies LLC as the steward of the project, maintaining core development while fostering an open ecosystem of contributors. We intend to evolve W3b Stitch into a cross-industry trust layer for verifiable credentials and digital interactions. Over time, we plan to decentralize governance and invite community participation in shaping roadmap priorities, while ensuring professional maintenance, security audits, and integration support remain ongoing.
+### Long-Term Team Plans and Intentions
+- W3b Stitch Technologies LLC as project steward, maintaining core development and open ecosystem growth.  
+- Evolve W3b Stitch into a cross-industry trust layer for verifiable credentials and digital interactions.  
+- Gradually decentralize governance with community participation in roadmap priorities.  
+- Ensure professional maintenance, security audits, and integration support are sustained long-term.  
 
 ## Referral Program (optional) :moneybag:
 
