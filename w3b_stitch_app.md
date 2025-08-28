@@ -205,39 +205,69 @@ Below we provide an **example roadmap**. In the descriptions, it should be clear
 - **DOT %:** 50%  
 
 ---
-
-## Milestone 1 — Trust Delta Anchoring Pallet
+### Milestone 1 — Trust Delta Anchoring Pallet & API
 
 - **Estimated Duration:** 1.5 months  
 - **FTE:** 2  
 - **Costs:** 15,000 USD  
 
-| No. | Deliverable | Specification |
-|-----|-------------|---------------|
-| 0a. | License | Apache 2.0 |
-| 0b. | Documentation | Provide inline rustdocs + full developer guide describing pallet usage, setup instructions, and integration into a Substrate node. |
-| 0c. | Tests & Test Guide | >80% unit and integration test coverage; test guide includes instructions on running cargo tests, interpreting results, and benchmarking. |
-| 0d. | Docker | Dockerfile to spin up a local Substrate node with `pallet_tdr_anchor` included. |
-| 0e. | Article | Publish technical article explaining Trust Delta Records (TDRs), the anchoring process, and developer integration points. |
-| 1. | Substrate module: `pallet_tdr_anchor` | Anchors content/credential hashes and Verifiable State Bundle (VSB) commitments. Includes extrinsics (`anchor_hash`, `anchor_vsb`, `verify_membership`), storage for anchors, events, Merkle proof verification, weights/benchmarks, rustdocs, and example runtime integration. |
+#### Deliverables
+- **License:** Apache 2.0  
+- **Stack:** Rust (Substrate FRAME pallet) + Python FastAPI reference client  
+- **Functionality:**  
+  - Substrate pallet `pallet_tdr_anchor` with extrinsics:  
+    - `anchor_hash(hash: H256)`  
+    - `anchor_vsb(commitment: H256)`  
+    - `verify_membership(proof: MerkleProof)`  
+  - FastAPI backend with endpoints:  
+    - `POST /anchor` → submit hash for anchoring  
+    - `GET /verify/{hash}` → confirm existence and validity on-chain  
+  - PostgreSQL schema: `ProofRecord(id, hash, tx_id, timestamp, status)`  
+- **Tests:**  
+  - Cargo unit tests (>80% coverage)  
+  - Pytest integration tests against a local Substrate node  
+- **Documentation:**  
+  - Inline rustdocs  
+  - Developer guide for pallet usage and API integration  
+  - OpenAPI spec auto-generated for FastAPI endpoints  
+- **Docker:**  
+  - Compose file for Substrate node + FastAPI + Postgres  
+- **Reusability:**  
+  - Pallet can be imported by any parachain/dapp to add anchoring primitives  
+  - API client usable in non-Rust environments for quick integration  
 
 ---
 
-## Milestone 2 — Credential Authentication & Provenance Pallet
+### Milestone 2 — Credential Authentication & Provenance Pallet
 
 - **Estimated Duration:** 1.5 months  
 - **FTE:** 2  
 - **Costs:** 15,000 USD  
 
-| No. | Deliverable | Specification |
-|-----|-------------|---------------|
-| 0a. | License | Apache 2.0 |
-| 0b. | Documentation | Expand documentation with tutorials for credential issuance, verification, and revocation flows. |
-| 0c. | Tests & Test Guide | >80% unit/integration test coverage for credential registration and verification; guide to running and validating results. |
-| 0d. | Docker | Dockerfile including both `pallet_tdr_anchor` + `pallet_capm_credentials`, enabling reproducible local test environments. |
-| 0e. | Article | Publish deep-dive article on credential provenance, schema registry design, and revocation mechanisms. |
-| 2. | Substrate module: `pallet_capm_credentials` | Implements issuer registry, schema registry, credential anchoring, and revocation. Extrinsics: `register_issuer`, `register_schema`, `anchor_credential`, `revoke_credential`, `verify_credential`. Includes events, queries, weights/benchmarks, >80% test coverage, rustdocs, and runtime example. |
-
+#### Deliverables
+- **License:** Apache 2.0  
+- **Stack:** Rust (Substrate FRAME pallet) + PostgreSQL + JSON-LD (W3C VC standard)  
+- **Functionality:**  
+  - Substrate pallet `pallet_capm_credentials` implementing:  
+    - `register_issuer(did: DID)`  
+    - `register_schema(schema: VC_Schema)`  
+    - `anchor_credential(credential_hash: H256)`  
+    - `revoke_credential(credential_id: Hash)`  
+    - `verify_credential(credential_id: Hash)`  
+  - Credential object stored in Postgres with fields: issuer, subject, metadata, proof hash, status  
+  - Verification pipeline that checks credential validity and revocation status  
+- **Tests:**  
+  - >80% unit + integration test coverage (cargo + pytest)  
+  - Fixtures for sample credentials and revocation flows  
+- **Documentation:**  
+  - Expanded developer docs with tutorials for credential issuance, verification, and revocation  
+  - Schema registry design examples  
+- **Docker:**  
+  - Compose file including both `pallet_tdr_anchor` and `pallet_capm_credentials`  
+  - Seed data for demo credential flows  
+- **Reusability:**  
+  - Other parachains can integrate pallet for credential anchoring and provenance  
+  - Schema registry design can be adopted across dapps for DID/VC interoperability  
 
 ## Future Plans
 
