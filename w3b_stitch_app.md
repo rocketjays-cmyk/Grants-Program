@@ -201,70 +201,40 @@ Development Status 📖
 - **Total Costs:** 30,000 USD  
 - **DOT %:** 50%  
 
----
 ### Milestone 1 — Trust Delta Anchoring Pallet & API
 
-- **Estimated Duration:** 1 months  
-- **FTE:**1 
-- **Costs:** 15,000 USD  
-
-#### Deliverables
-- **License:** Apache 2.0  
-- **Stack:** Rust (Substrate FRAME pallet) + Python FastAPI reference client  
-- **Functionality:**  
-  - Substrate pallet `pallet_tdr_anchor` with extrinsics:  
-    - `anchor_hash(hash: H256)`  
-    - `anchor_vsb(commitment: H256)`  
-    - `verify_membership(proof: MerkleProof)`  
-  - FastAPI backend with endpoints:  
-    - `POST /anchor` → submit hash for anchoring  
-    - `GET /verify/{hash}` → confirm existence and validity on-chain  
-  - PostgreSQL schema: `ProofRecord(id, hash, tx_id, timestamp, status)`  
-- **Tests:**  
-  - Cargo unit tests (>80% coverage)  
-  - Pytest integration tests against a local Substrate node  
-- **Documentation:**  
-  - Inline rustdocs  
-  - Developer guide for pallet usage and API integration  
-  - OpenAPI spec auto-generated for FastAPI endpoints  
-- **Docker:**  
-  - Compose file for Substrate node + FastAPI + Postgres  
-- **Reusability:**  
-  - Pallet can be imported by any parachain/dapp to add anchoring primitives  
-  - API client usable in non-Rust environments for quick integration  
-
----
-
-### Milestone 2 — Credential Authentication & Provenance Pallet
-
-- **Estimated Duration:** 1 months  
+- **Estimated Duration:** 1 month  
 - **FTE:** 1  
 - **Costs:** 15,000 USD  
 
-#### Deliverables
-- **License:** Apache 2.0  
-- **Stack:** Rust (Substrate FRAME pallet) + PostgreSQL + JSON-LD (W3C VC standard)  
-- **Functionality:**  
-  - Substrate pallet `pallet_capm_credentials` implementing:  
-    - `register_issuer(did: DID)`  
-    - `register_schema(schema: VC_Schema)`  
-    - `anchor_credential(credential_hash: H256)`  
-    - `revoke_credential(credential_id: Hash)`  
-    - `verify_credential(credential_id: Hash)`  
-  - Credential object stored in Postgres with fields: issuer, subject, metadata, proof hash, status  
-  - Verification pipeline that checks credential validity and revocation status  
-- **Tests:**  
-  - >80% unit + integration test coverage (cargo + pytest)  
-  - Fixtures for sample credentials and revocation flows  
-- **Documentation:**  
-  - Expanded developer docs with tutorials for credential issuance, verification, and revocation  
-  - Schema registry design examples  
-- **Docker:**  
-  - Compose file including both `pallet_tdr_anchor` and `pallet_capm_credentials`  
-  - Seed data for demo credential flows  
-- **Reusability:**  
-  - Other parachains can integrate pallet for credential anchoring and provenance  
-  - Schema registry design can be adopted across dapps for DID/VC interoperability  
+| No. | Deliverable                                      | Specification |
+|-----|--------------------------------------------------|---------------|
+| 0a. | **License**                                      | All code released under **Apache-2.0**. |
+| 0b. | **Documentation**                                | Inline **rustdocs** for all public items; developer guide explaining pallet usage & API integration; OpenAPI spec auto-generated for FastAPI endpoints. |
+| 0c. | **Tests & Test Guide**                           | **>80%** coverage with `cargo test` (unit) and `pytest` (integration) against a local Substrate node; includes instructions for test execution. |
+| 0d. | **Docker**                                       | `docker-compose.yml` launching Substrate node, FastAPI service, and Postgres database with demo seed data. |
+| 1.  | **Substrate module: `pallet_tdr_anchor`**        | Implements extrinsics: `anchor_hash(hash: H256)`, `anchor_vsb(commitment: H256)`, `verify_membership(proof: MerkleProof)`; emits events for anchoring/verification; includes benchmarks and example runtime integration. |
+| 2.  | **FastAPI backend reference client**             | REST endpoints: `POST /anchor` → submit hash for anchoring; `GET /verify/{hash}` → confirm existence and validity; integrated with local Substrate node. |
+| 3.  | **PostgreSQL schema**                            | Table `ProofRecord(id, hash, tx_id, timestamp, status)` with migrations; used to persist proof anchoring and verification logs. |
+| 4.  | **Reusability**                                  | Pallet can be imported by any parachain/dapp to add anchoring primitives; API client usable in non-Rust environments for quick integration. |
+
+---
+### Milestone 2 — Credential Authentication & Provenance Pallet
+
+- **Estimated Duration:** 1 month  
+- **FTE:** 1  
+- **Costs:** 15,000 USD  
+
+| No. | Deliverable                                      | Specification |
+|-----|--------------------------------------------------|---------------|
+| 0a. | **License**                                      | All code released under **Apache-2.0**. |
+| 0b. | **Documentation**                                | Inline **rustdocs** for all public items; developer guide covering pallet usage, issuer/schema registry, credential anchor/verify/revoke flows; migration notes and examples; changelog. |
+| 0c. | **Tests & Test Guide**                           | **>80%** unit/integration coverage via `cargo test`; end-to-end tests using fixtures for sample VCs and revocation; **Test Guide** explaining how to run tests and interpret results. |
+| 0d. | **Docker**                                       | `docker-compose.yml` launching a local Substrate node with `pallet_tdr_anchor` + `pallet_capm_credentials` enabled, plus a Postgres service pre-seeded for demo flows. |
+| 1.  | **Substrate module: `pallet_capm_credentials`**  | Implements extrinsics: `register_issuer(did: DID)`, `register_schema(schema: VC_Schema)`, `anchor_credential(credential_hash: H256)`, `revoke_credential(credential_id: Hash)`, `verify_credential(credential_id: Hash)`. Includes events, storage items, weights/benchmarks, and example runtime integration. |
+| 2.  | **Credential storage & verification pipeline**   | Postgres schema and migrations for `Credential(issuer, subject, metadata, proof_hash, status, timestamps)`; verification pipeline that checks membership/validity and reflects **revocation status**. |
+| 3.  | **Schema & issuer registry examples**            | Example DID/VC JSON-LD schemas; registry population scripts; tutorial showing issuance → anchor → verify → revoke round-trip. |
+| 4.  | **Reusability**                                  | Pallet designed for import by other parachains/dapps; Postgres schema and tutorials provided as reusable patterns for DID/VC interoperability across the ecosystem. |
 
 ## Future Plans
 
