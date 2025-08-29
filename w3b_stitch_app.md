@@ -165,12 +165,16 @@ Past Applications to Web3 Foundation
 This is our first submission to the Web3 Foundation. No prior grants have been applied for under this project or related entities.
 
 ### Team Code Repos
-
+## Main repo for W3F MVP    
+https://github.com/rocketjays-cmyk/W3b-Stitch-Dot. 
+## Old repo
 -(https://github.com/rocketjays-cmyk/w3b-stitch)
 
 
-Please also provide the GitHub accounts of all team members. If they contain no activity, references to projects hosted elsewhere or live are also fine.
 
+## GitHub accounts of all team members.
+
+Jayden C. Saliby
 - https://github.com/rocketjays-cmyk
 
 
