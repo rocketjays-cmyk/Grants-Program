@@ -166,8 +166,8 @@ This is our first submission to the Web3 Foundation. No prior grants have been a
 
 ### Team Code Repos
 ## Main repo for W3F MVP    
-(https://github.com/rocketjays-cmyk/w3bstitch-web)
-## Old repo
+(https://github.com/rocketjays-cmyk/W3b-Stitch-DOT)
+## Archived Repo
 -(https://github.com/rocketjays-cmyk/w3b-stitch)
 
 
