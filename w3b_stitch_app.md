@@ -9,6 +9,9 @@
 ## Project Overview :page_facing_up:
 
 ### Overview
+<img width="853" height="707" alt="image" src="https://github.com/user-attachments/assets/e228fb97-1c87-4036-bab5-5a19e125ca10" />
+
+
 
 Tagline:
 W3b Stitch — a decentralized trust engine for verifying media, credentials, and identities across blockchains.
